@@ -1,0 +1,75 @@
+Relational DB > ElasticSearch
+Database > Index
+Table > Type
+Row > Document
+Column > Fields
+Shema > Mapping
+
+- Typelarda version var version eğer type değişirse, yani yeni bir kolon gelirse version değişir gibi.
+
+- PUT /add data 
+ 	localhost:9200/exam/product/123
+{
+	"brand":"lacoste",
+	"name":"don",
+	"color":"beyaz",
+	"date":"2019"
+}
+- POST /add data
+	localhost:9200/exam/product ---- 
+{
+	"brand":"lacoste",
+	"name":"don",
+	"color":"beyaz",
+	"date":"2019"
+}
+- Put ile yazarken idleri kendimiz verdik ama post ile yaparken id kendi otomatik oluşabildi.
+
+- GET /get data
+	localhost:9200/exam/product/123
+/it gives no 123 product
+
+	localhost:9200/exam/product/124?_source=false
+/exists?
+	localhost:9200/exam/product/125?_source_include=name,color
+/retrives by name and color 
+
+- DELETE 
+	localhost:9200/exam/product/125
+
+
+- POST /(update) 
+	localhost:9200/exam/product/124/_update
+{
+	"doc":{
+		"color":"black"
+	}
+}
+
+
+- POST /(delete) 
+	localhost:9200/exam/product/_delete_by_query
+	{
+	"query":{
+		"match":{
+			"color":"black"
+			
+		}
+	}
+}
+
+- GET /(search based)
+
+	localhost:9200/exam/product/_search?q=name:gömlek
+- GET 
+
+	localhost:9200/_all
+/all infos incluse datas
+
+- GET 
+	localhost:9200/
+/we can get info like cluster name, uuid,..
+
+
+
+

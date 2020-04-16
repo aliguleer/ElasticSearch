@@ -1,0 +1,8 @@
+-GET /veri url üzerinden gidiyor www.blabala.php?date=20200414
+-POST / burada veri gizli gidiyor (bodyde gidiyor)
+-HEAD
+-OPTIONS
+-TRACE
+-PUT
+-DELETE
+-CONNECT
